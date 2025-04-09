@@ -1,0 +1,96 @@
+=================================================
+FOOTBALL BALL PREDICTION VALIDATION REPORT
+=================================================
+Generated: 2025-04-08 01:10:48
+Input file: predicted_ball_positions.csv
+Total predictions: 57734
+
+1. BASIC DATA VALIDATION
+------------------------
+Missing columns: None
+Missing values: 0 rows (0.00%)
+Duplicate timestamps: 0
+Time sequence: OK
+Periods detected: [1, 2]
+
+2. POSITION RANGE VALIDATION
+----------------------------
+Actual position ranges:
+  X: -5246.91 to 5234.32
+  Y: -3557.60 to 5554.82
+
+Expected position ranges:
+  X: -5000 to 5000
+  Y: -3400 to 3400
+
+Out-of-bounds positions:
+  X: 2184 points (3.78%)
+  Y: 2028 points (3.51%)
+
+Pitch coverage:
+  X-range coverage: 104.81%
+  Y-range coverage: 134.01%
+  Area coverage: 140.46%
+
+3. BALL MOVEMENT VALIDATION
+---------------------------
+Ball speed statistics (units/second):
+  Min: 0.18
+  Max: 982.71
+  Mean: 72.40
+  Median: 57.52
+  Std Dev: 61.02
+  95th percentile: 181.50
+  99th percentile: 292.28
+
+Large position jumps:
+  Count: 83 (0.14%)
+  Max jump: 982.71 units
+
+Unrealistic speeds:
+  Count: 0 (0.00%)
+  Max speed: 982.71 units/second
+
+Acceleration issues:
+  Count: 0 (0.00%)
+  Max acceleration: 428.89 units/second²
+
+4. PERIOD-SPECIFIC VALIDATION
+-----------------------------
+Period 1 (27772 points):
+  X range: -5055.67 to 5234.32 (mean: 503.05)
+  Y range: -3514.23 to 4660.20 (mean: 163.71)
+  Mean speed: 73.13 units/second
+  Max speed: 982.71 units/second
+  Large jumps: 21
+  Unrealistic speeds: 0
+
+Period 2 (29962 points):
+  X range: -5246.91 to 5227.04 (mean: -906.46)
+  Y range: -3557.60 to 5554.82 (mean: 124.06)
+  Mean speed: 71.71 units/second
+  Max speed: 947.99 units/second
+  Large jumps: 62
+  Unrealistic speeds: 0
+
+Period comparisons:
+  1_vs_2:
+    X mean difference: 1409.50
+    Y mean difference: 39.66
+    Speed difference: 1.42
+
+5. SUMMARY AND RECOMMENDATIONS
+------------------------------
+Issues detected:
+  - Out-of-bounds positions: 4212 points
+  - Large position jumps: 83 jumps
+
+Recommendations:
+  - Review out-of-bounds positions and apply boundary constraints if needed.
+  - Apply smoothing to reduce unrealistic position jumps.
+  - Consider applying temporal smoothing if not already done.
+  - Validate predictions against known ball movement patterns in football.
+
+=================================================
+END OF REPORT
+=================================================
